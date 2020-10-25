@@ -4,20 +4,17 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "postgresdb.USERS")
-@NamedNativeQuery(name = "Users.findAll", query = "SELECT * FROM postgresdb.Users ORDER BY ID", resultClass = User.class)
+@Table(name = "USERS")
+@NamedNativeQuery(name = "Users.findAll", query = "SELECT * FROM USERS ORDER BY ID", resultClass = User.class)
 
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 

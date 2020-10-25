@@ -4,20 +4,17 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "mariadb.ORDERS")
-@NamedNativeQuery(name = "Orders.findAll", query = "SELECT * FROM mariadb.Orders ORDER BY ID", resultClass = Order.class)
+@Table(name = "ORDERS")
+@NamedNativeQuery(name = "Orders.findAll", query = "SELECT * FROM ORDERS ORDER BY ID", resultClass = Order.class)
 
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
 

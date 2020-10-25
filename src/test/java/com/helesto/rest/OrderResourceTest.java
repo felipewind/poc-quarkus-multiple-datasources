@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import io.quarkus.test.junit.QuarkusTest;
 
 @QuarkusTest
-public class UserResourceTest {
+public class OrderResourceTest {
 
     @Test
-    public void testUserListEndpoint() {
+    public void testOrderHelloEndpoint() {
         given()
-          .when().get("/users/list")
+          .when().get("/orders/list")
           .then()
              .statusCode(200);
     }

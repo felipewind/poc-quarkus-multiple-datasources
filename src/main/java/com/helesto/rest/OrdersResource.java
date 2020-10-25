@@ -10,18 +10,18 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.helesto.repositories.users.UserRepository;
+import com.helesto.repositories.orders.OrderRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Path("/users/list")
-public class UsersResource {
+@Path("/orders/list")
+public class OrdersResource {
 
-    private static final Logger LOG = LoggerFactory.getLogger(UsersResource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(OrdersResource.class);
 
     @Inject
-    UserRepository userRepository;
+    OrderRepository orderRepository;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -29,14 +29,14 @@ public class UsersResource {
 
         LOG.info("list");
 
-        List<String> userList = new ArrayList<>();
+        List<String> orderList = new ArrayList<>();
 
-        userRepository.findAll().forEach(user -> {
+        orderRepository.findAll().forEach(user -> {
             LOG.info("user: " + user + "\n");
-            userList.add(user.toString());
+            orderList.add(user.toString());
         });
 
-        return Response.status(Response.Status.OK).entity(userList).build();
+        return Response.status(Response.Status.OK).entity(orderList).build();
 
     }
 }
