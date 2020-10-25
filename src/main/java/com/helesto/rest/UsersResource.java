@@ -1,4 +1,4 @@
-package com.helesto.resteasy;
+package com.helesto.rest;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -6,15 +6,15 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.helesto.repositories.UserRepository;
+import com.helesto.repositories.users.UserRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Path("/resteasy/hello")
-public class ExampleResource {
+@Path("/users")
+public class UsersResource {
 
-    private static final Logger LOG = LoggerFactory.getLogger(ExampleResource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(UsersResource.class);
 
     @Inject
     UserRepository userRepository;

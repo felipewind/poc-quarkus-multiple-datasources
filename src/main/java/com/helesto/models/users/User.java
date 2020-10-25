@@ -1,4 +1,4 @@
-package com.helesto.models;
+package com.helesto.models.users;
 
 import java.time.LocalDate;
 
@@ -21,7 +21,7 @@ public class User {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", length = 100)
     private String name;
 
     @Column(name = "BIRTH_DATE")
