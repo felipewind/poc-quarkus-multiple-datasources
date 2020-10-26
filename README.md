@@ -24,7 +24,12 @@ docker run -d --name mariadb-db -p 3306:3306 -e MYSQL_USER=maria -e MYSQL_ROOT_P
 ```bash
 ./mvnw compile quarkus:dev
 ```
-3. From a browser access http://localhost:8080/swagger-ui and the test:
+3. Or you can run inside docker-compose:
+```
+chmod +x ./run.sh
+./run.sh
+```
+4. From a browser access http://localhost:8080/swagger-ui and the test:
    - /users/list - select data from the PostgreSQL;
    - /orders/list - select data from the MariaDB (or Oracle database);
 
