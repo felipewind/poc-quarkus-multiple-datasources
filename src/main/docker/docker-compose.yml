@@ -3,12 +3,14 @@ services:
   poc-quarkus-multiple-datasources:
     build:
       context: ../../../
-      dockerfile: ./src/main/docker/Dockerfile.jvm
+      dockerfile: ./src/main/docker/Dockerfile.dev
     environment:
       - POSTGRESQL_SERVICE_HOST=postgresql
       - POSTGRESQL_SERVICE_PORT=5432
       - MARIADB_SERVICE_HOST=mariadb
-      - MARIA_SERVICE_PORT=3306      
+      - MARIA_SERVICE_PORT=3306
+    ports:
+      - 8080:8080
     networks:
       - poc-net
     depends_on:
