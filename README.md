@@ -65,6 +65,18 @@ Test Oracle Docker image origin:./mvnw compile quarkus:dev
 - https://quarkus.io/guides/hibernate-orm#multiple-persistence-units
 
 
+## Tip to pass environment variable to property with double quotes
+
+To override a property like host."foo".bar with an environment variable it's necessary to put two underlines (__).
+
+`host."foo".bar` it will be overriden with:
+export HOST__FOO__BAR=your_host
+
+In this projet:
+- quarkus.datasource."users".jdbc.url
+- export QUARKUS_DATA_SOURCE__USERS__JDBC_URL=your_url
+
+
 
 # Quarkus
 
