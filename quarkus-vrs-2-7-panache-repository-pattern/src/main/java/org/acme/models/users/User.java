@@ -8,13 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-
 @Entity
 @Table(name = "USERS")
 @NamedNativeQuery(name = "Users.findAll", query = "SELECT * FROM USERS ORDER BY ID", resultClass = User.class)
-
-public class User extends PanacheEntityBase {
+public class User {
 
     @Id
     @Column(name = "ID")

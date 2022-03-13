@@ -3,6 +3,7 @@ package org.acme.resource;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Path("/users/list")
+@ApplicationScoped
 public class UsersResource {
 
     private static final Logger LOG = LoggerFactory.getLogger(UsersResource.class);
