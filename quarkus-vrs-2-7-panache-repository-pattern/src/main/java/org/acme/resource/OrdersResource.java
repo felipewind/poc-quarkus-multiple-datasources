@@ -30,7 +30,7 @@ public class OrdersResource {
 
         List<String> orderList = new ArrayList<>();
 
-        orderRepository.findAll().forEach(user -> {
+        orderRepository.listAll().forEach(user -> {
             LOG.info("user: " + user + "\n");
             orderList.add(user.toString());
         });

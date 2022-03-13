@@ -3,19 +3,17 @@ package org.acme.repositories.users;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
 
 import org.acme.models.users.User;
 
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+
 @ApplicationScoped
-public class UserRepository {
+public class UserRepository implements PanacheRepository<User> {
 
-    @Inject
-    EntityManager entityManager;
-
-    public List<User> findAll() {
-        return entityManager.createNamedQuery("Users.findAll", User.class).getResultList();
+    @Override
+    public List<User> listAll() {
+        return listAll();
     }
 
 }

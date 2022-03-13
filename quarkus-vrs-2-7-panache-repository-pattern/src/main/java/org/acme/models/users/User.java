@@ -8,45 +8,23 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 @Entity
 @Table(name = "USERS")
 @NamedNativeQuery(name = "Users.findAll", query = "SELECT * FROM USERS ORDER BY ID", resultClass = User.class)
 
-public class User {
+public class User extends PanacheEntityBase {
 
     @Id
     @Column(name = "ID")
-    private long id;
+    public long id;
 
     @Column(name = "NAME", length = 100)
-    private String name;
+    public String name;
 
     @Column(name = "BIRTH_DATE")
-    private LocalDate birthDate;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
+    public LocalDate birthDate;
 
     @Override
     public String toString() {

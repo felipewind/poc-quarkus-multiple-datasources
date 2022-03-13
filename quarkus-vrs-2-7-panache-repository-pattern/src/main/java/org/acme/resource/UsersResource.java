@@ -30,7 +30,7 @@ public class UsersResource {
 
         List<String> userList = new ArrayList<>();
 
-        userRepository.findAll().forEach(user -> {
+        userRepository.listAll().forEach(user -> {
             LOG.info("user: " + user + "\n");
             userList.add(user.toString());
         });

@@ -8,56 +8,26 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 @Entity
 @Table(name = "ORDERS")
 @NamedNativeQuery(name = "Orders.findAll", query = "SELECT * FROM ORDERS ORDER BY ID", resultClass = Order.class)
 
-public class Order {
+public class Order extends PanacheEntityBase {
 
     @Id
     @Column(name = "ID")
-    private long id;
+    public long id;
 
     @Column(name = "PRODUCT_NAME", length = 100)
-    private String productName;
+    public String productName;
 
     @Column(name = "ORDER_DATE")
-    private LocalDate orderDate;
+    public LocalDate orderDate;
 
     @Column(name = "USER_ID")
-    private long userId;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
+    public long userId;
 
     @Override
     public String toString() {
