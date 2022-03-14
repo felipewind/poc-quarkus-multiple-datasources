@@ -14,7 +14,7 @@ Two datasources are defined in `src/resources/application.properties`:
 
 The main project is on the Quarkus 1.9.2.Final version.
 
-There are other three projects available here in more recent versions:
+# There are other three projects available here in more recent versions
 - [Quarkus version 2.7.4.Final using only Hibernate](./quarkus-vrs-2-7-hibernate/README.md) - folder `./quarkus-vrs-2-7-hibernate`
 - [Quarkus version 2.7.4.Final using only Panache with the Repository Pattern](./quarkus-vrs-2-7-panache-repository-pattern/README.md) - folder `./quarkus-vrs-2-7-panache-repository-pattern`
 - [Quarkus version 2.7.4.Final using only Panache with the Active Record Pattern](./quarkus-vrs-2-7-panache-active-record-pattern/README.md) - folder `./quarkus-vrs-2-7-panache-active-record-pattern`
