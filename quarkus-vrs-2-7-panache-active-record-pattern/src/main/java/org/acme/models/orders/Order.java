@@ -7,9 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends PanacheEntityBase {
 
     @Id
     @Column(name = "ID")
